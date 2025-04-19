@@ -38,6 +38,9 @@
                 <asp:TableRow>
                     <asp:TableHeaderCell>Aaron | encrypt/decrypt dll file | can encrypt and decrypt user's password, to test go to login -> enter password and hit enter login button to see encrypt and decrypt| C#</asp:TableHeaderCell>
                 </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableHeaderCell>Azjae | word replacement | can find and replace a word with another word of choice | C#</asp:TableHeaderCell>
+                </asp:TableRow>
             </asp:Table>
         </p>
     </form>
