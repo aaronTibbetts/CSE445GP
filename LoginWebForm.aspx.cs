@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.IO;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Serialization;
 using myLib;
-
 namespace WebApplication1
 {
-    public partial class LoginWebForm : System.Web.UI.Page
-    {
-        private string location = Path.Combine(HttpRuntime.AppDomainAppPath, @"App_Data\doc.xml");
+	public partial class LoginWebForm : System.Web.UI.Page
+	{
+        private string location = Path.Combine(HttpRuntime.AppDomainAppPath, @"App_Data\Users.xml");
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+		{
             string directory = Path.GetDirectoryName(location);
             if (!Directory.Exists(directory))
             {
@@ -27,7 +26,8 @@ namespace WebApplication1
 
         protected void CreateAccount_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CreateWebForm.aspx");
+			//implement captcha here 
+			Response.Redirect("CreateWebForm.aspx");
         }
 
         protected void LoginBttn_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace WebApplication1
                 Session["LoggedIn"] = true;
                 Session["Username"] = username;
 
-                Response.Redirect("DEFAULT PAGE"); //default page redirection needed
+                Response.Redirect("MemeberPage.aspx"); //default page redirection needed
             }
             else
             {
@@ -54,11 +54,10 @@ namespace WebApplication1
                 Label1.Visible = true;
             }
         }
-
         private bool VerifyUser(string username, string password)
         {
             List<User> allUsers = new List<User>();
-            
+
             if (File.Exists(location))
             {
                 XmlSerializer des = new XmlSerializer(typeof(List<User>));
@@ -76,7 +75,7 @@ namespace WebApplication1
                     }
                 }
                 User foundUser = allUsers.FirstOrDefault(u => u.UserName == username);
-                
+
                 if (foundUser != null)
                 {
 
@@ -93,40 +92,9 @@ namespace WebApplication1
                     }
                 }
             }
-            
+
             return false;
         }
     }
-
-    public class User
-    {
-        string userName;
-        string passWord;
-        byte[] iv;
-        byte[] key;
-
-        public string UserName
-        {
-            get { return userName; }
-            set { userName = value; }
-        }
-
-        public string PassWord
-        {
-            get { return passWord; }
-            set { passWord = value; }
-        }
-
-        public byte[] IV
-        {
-            get { return iv; }
-            set { iv = value; }
-        }
-
-        public byte[] Key
-        {
-            get { return key; }
-            set { key = value; }
-        }
-    }
+   
 }
