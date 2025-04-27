@@ -27,7 +27,7 @@
                     <asp:TableHeaderCell>Application and Components Summary</asp:TableHeaderCell>
                 </asp:TableRow>
                 <asp:TableRow>
-                    <asp:TableHeaderCell>Members Contribution Percentage: Aaron = x% Azjae = x%</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Members Contribution Percentage: Aaron = x% Azjae = x% Theren = x%</asp:TableHeaderCell>
                 </asp:TableRow>
                 <asp:TableRow>
                 <asp:TableHeaderCell>Aaron| aspx page and server controls| The public default page that links everything together | GUI desgin and C#</asp:TableHeaderCell>           
@@ -37,9 +37,21 @@
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableHeaderCell>Aaron | encrypt/decrypt dll file | can encrypt and decrypt user's password, to test go to login -> enter password and hit enter login button to see encrypt and decrypt| C#</asp:TableHeaderCell>
+                </asp:TableRow
+                <asp:TableRow>
+                    <asp:TableHeaderCell>Aaron | top ten words | returns top ten words in a text file| C#</asp:TableHeaderCell>
+                </asp:TableRow>>
+                <asp:TableRow>
+                    <asp:TableHeaderCell>Aaron | staff page and member page | staff is empty but member contains the services|GUI Design and C#</asp:TableHeaderCell>
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableHeaderCell>Azjae | word replacement | can find and replace a word with another word of choice | C#</asp:TableHeaderCell>
+                </asp:TableRow>
+                 <asp:TableRow>
+                    <asp:TableHeaderCell>Azjae | create user page | allows user to create an account | C#</asp:TableHeaderCell>
+                </asp:TableRow>
+                 <asp:TableRow>
+                    <asp:TableHeaderCell>Theren | login page | can login using a username and password | C#</asp:TableHeaderCell>
                 </asp:TableRow>
             </asp:Table>
         </p>
